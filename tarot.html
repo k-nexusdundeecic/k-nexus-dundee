@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>K-NEXUS | Tarot Portal</title>
+    <style>
+        :root { --pink: #FF69B4; --dark: #0a0a0a; --gold: #D4AF37; }
+        body { background: var(--dark); color: white; font-family: sans-serif; margin: 0; text-align: center; }
+        .nav-hud { background: rgba(255,105,180,0.1); padding: 20px; border-bottom: 2px solid var(--pink); }
+        .nav-hud a { color: white; margin: 0 15px; text-decoration: none; font-weight: 900; }
+        .tarot-card-area { margin: 50px auto; max-width: 500px; padding: 40px; border: 3px solid var(--gold); border-radius: 20px; background: #111; }
+        #card-display { font-size: 2rem; color: var(--gold); font-weight: 900; margin: 20px 0; min-height: 50px; }
+        #meaning-display { font-style: italic; color: #ccc; margin-bottom: 20px; }
+        #verdict-display { font-size: 1.5rem; font-weight: 900; padding: 10px; border-radius: 10px; display: inline-block; }
+        .btn-draw { background: var(--pink); color: black; border: none; padding: 20px 40px; border-radius: 15px; font-weight: 900; cursor: pointer; font-size: 1.1rem; }
+        .in-store-notice { margin-top: 50px; background: rgba(212, 175, 55, 0.1); padding: 20px; border: 1px dashed var(--gold); }
+    </style>
+</head>
+<body>
+    <nav class="nav-hud">
+        <a href="index.html">HOME</a>
+        <a href="gaming.html">ARCADE</a>
+        <a href="tarot.html">TAROT</a>
+        <a href="clinic.html">CLINIC</a>
+    </nav>
+
+    <h1>THE SENTINEL ORACLE</h1>
+    <p>Structural Translation for High-Attunement Minds</p>
+
+    <div class="tarot-card-area">
+        <div id="card-display">???</div>
+        <div id="meaning-display">Click below to draw a card from the deck.</div>
+        <div id="verdict-display"></div>
+        <br><br>
+        <button class="btn-draw" onclick="drawCard()">DRAW CARD</button>
+    </div>
+
+    <div class="in-store-notice">
+        <h2>IN-STORE READINGS</h2>
+        <p>Visit K-NEXUS DUNDEE for a full High-Attunement reading with our specialist.</p>
+        <p><strong>Status: Professional Pattern Recognition Active</strong></p>
+    </div>
+
+    <script>
+        const deck = [
+            { name: "QUEEN OF SWORDS (QS)", meaning: "Clear communication, independence, and objectivity.", verdict: "YES", color: "#4CAF50" },
+            { name: "ACE OF PENTACLES (AP)", meaning: "New financial opportunities and physical manifestations.", verdict: "YES", color: "#4CAF50" },
+            { name: "PAGE OF SWORDS (PS)", meaning: "Curiosity, mental energy, and new ways of thinking.", verdict: "MAYBE", color: "#FFC107" },
+            { name: "PAGE OF PENTACLES (PP)", meaning: "Setting goals and developing new skills.", verdict: "MAYBE", color: "#FFC107" },
+            { name: "THE TOWER", meaning: "Sudden change and breaking down of old structures.", verdict: "NO", color: "#F44336" },
+            { name: "THE SUN", meaning: "Success, radiance, and abundance.", verdict: "YES", color: "#4CAF50" }
+        ];
+
+        function drawCard() {
+            const randomIndex = Math.floor(Math.random() * deck.length);
+            const card = deck[randomIndex];
+            
+            document.getElementById('card-display').innerText = card.name;
+            document.getElementById('meaning-display').innerText = card.content || card.meaning;
+            
+            const verdict = document.getElementById('verdict-display');
+            verdict.innerText = "VERDICT: " + card.verdict;
+            verdict.style.backgroundColor = card.color;
+            verdict.style.color = (card.verdict === "MAYBE") ? "black" : "white";
+        }
+    </script>
+
+    <footer style="margin-top: 50px; padding: 20px; color: #555;">
+        K-NEXUS DUNDEE CIC | Tarot as a Structural Translation Tool
+    </footer>
+</body>
+</html>
