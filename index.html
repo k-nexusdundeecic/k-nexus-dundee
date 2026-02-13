@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>K-NEXUS DUNDEE | Sanctuary Entrance</title>
+    <title>K-NEXUS | PROTECTED</title>
     <style>
-        :root { --pink: #FF69B4; --dark: rgba(20,20,20,0.95); --accent: #FF1493; }
-        body { background: var(--pink); font-family: sans-serif; margin: 0; color: #000; }
-        .hud { background: var(--dark); padding: 25px; text-align: center; border-bottom: 4px solid var(--accent); }
+        :root { --pink: #FF69B4; --dark: #0a0a0a; --accent: #FF1493; }
+        body { background: #000; color: var(--pink); font-family: sans-serif; margin: 0; transition: 0.5s; }
+        #vault-door { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .lock-box { border: 3px solid var(--pink); padding: 40px; border-radius: 20px; background: #111; }
+        #main-sanctuary { display: none; background: var(--pink); color: #000; min-height: 100vh; }
+        .hud { background: rgba(0,0,0,0.9); padding: 25px; text-align: center; border-bottom: 4px solid var(--accent); }
         .hud a { color: white; margin: 0 12px; text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 0.85rem; }
-        .hud a:hover { color: var(--pink); }
-        .card { background: white; padding: 50px; border-radius: 25px; border: 5px solid #000; max-width: 750px; margin: 60px auto; text-align: center; box-shadow: 15px 15px 0px rgba(0,0,0,0.1); }
-        .director-badge { background: #0
+        .card { background: white; padding: 50px; border-radius: 25px; border: 5px solid #000; max-width: 750px; margin: 60px auto; text-align: center; }
+        .director-badge { background: #000; color: white; padding: 10px 20px; display: inline-block; border-radius: 10px; font-weight: bold; margin-top: 20px; }
+        input { padding: 15px; border-radius: 10px; border: 2px solid var(--pink); background: #000; color: white; font-size: 1.2rem; margin-bottom: 20px; text-align: center; }
+    </style>
+</head>
+<body>
 
+    <div id="vault-door">
+        <div class="lock-box">
+            <h1>K-NEXUS DUNDEE CIC</h1>
+            <p style="color:white; letter-spacing
