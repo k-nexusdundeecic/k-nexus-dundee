@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>K-NEXUS | Brain Clinic</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;600;900&display=swap" rel="stylesheet">
     <style>
-01 :root { --pink: #FF69B4; --dark-hud: rgba(15, 15, 15, 0.9); --accent: #FF1493; --nhs-blue: #005EB8; }
-02 body { background-color: var(--pink); font-family: 'Lexend', sans-serif; margin: 0; }
-03 .nav-hud { background: var(--dark-hud); padding: 25px; position: sticky; top: 0; border-bottom: 3px solid var(--accent); text-align: center; }
-04 .nav-hud a { color: white; margin: 0 15px; text-decoration: none; font-weight: 900; text-transform: uppercase; }
-05 .clinic-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; max-width: 1200px; margin: 50px auto; padding: 20px; }
-06 .data-card { background: white; padding: 40px; border-radius: 20px; border: 4px solid #000; }
-07 .nhs-portal { background: var(--nhs-blue); color: white; padding: 25px; border-radius: 15px; margin-top: 20px; text-align: center; }
+        :root { --pink: #FF69B4; --dark-hud: rgba(15, 15, 15, 0.9); --accent: #FF1493; --nhs-blue: #005EB8; }
+        body { background-color: var(--pink); font-family: sans-serif; margin: 0; color: #000; }
+        .nav-hud { background: var(--dark-hud); padding: 25px; border-bottom: 3px solid var(--accent); text-align: center; }
+        .nav-hud a { color: white; margin: 0 15px; text-decoration: none; font-weight: 900; font-size: 0.8rem; }
+        .main-container { display: flex; max-width: 1100px; margin: 40px auto; gap: 20px; padding: 0 20px; }
+        .sidebar-33 { flex: 1; background: #000; border: 4px solid var(--accent); border-radius: 20px; height: 400px; color: white; padding: 20px; }
+        .content-66 { flex: 2; background: white; padding: 40px; border-radius: 20px; border: 4px solid #000; }
+        .nhs-section { background: var(--nhs-blue); color: white; padding: 25px; border-radius: 15px; margin-top: 20px; }
+        .btn-nhs { background: white; color: var(--nhs-blue); border: none; padding: 15px 30px; border-radius: 10px; font-weight: 900; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -21,24 +22,34 @@
         <a href="cafe.html">CAFE</a>
         <a href="clinic.html">CLINIC</a>
         <a href="membership.html">JOIN</a>
-        <a href="admin.html">CONTROL</a>
     </nav>
-    <div class="clinic-grid">
-        <div style="background: var(--dark-hud); border-radius: 20px; border: 4px solid var(--accent); display: flex; align-items: center; justify-content: center; color: white; font-weight: 900;">SENSORY UNIT</div>
-        <div class="data-card">
-            <h2>Brain Injury & Peer Clinic</h2>
-            <p>A specialized environment for pattern recognition and Carseview Day Release support.</p>
-            <ul>
-                <li>Sensory Light & Music Therapy Units</li>
-                <li>Peer-to-Peer Nursing Support</li>
-                <li>Pattern Recognition Translation</li>
-            </ul>
-            <div class="nhs-portal">
-                <h3>NHS Mental Health Donation Portal</h3>
-                <p>Support community attunement and mental health initiatives.</p>
-                <button style="background:white; color:var(--nhs-blue); border:none; padding:10px 20px; font-weight:900; cursor:pointer; border-radius:5px;">DONATE TO NHS</button>
+
+    <div class="main-container">
+        <div class="sidebar-33">
+            <h3>SENSORY CONTROL</h3>
+            <p>High-Attunement Zone</p>
+            <hr border="1px solid var(--accent)">
+            <p>Visual: Dimmed Pink/Hue</p>
+            <p>Audio: Non-Local Sensing Calibration</p>
+        </div>
+
+        <div class="content-66">
+            <h1>Brain Injury & Peer Support</h1>
+            <p><strong>Specialized Mind Clinic for Objective Truth and Pattern Recognition.</strong></p>
+            
+            <h3>Carseview Day Release Group</h3>
+            <p>A dedicated sanctuary for patients to engage in structure and routine away from clinical environments.</p>
+
+            <div class="nhs-section">
+                <h2>NHS MENTAL HEALTH PORTAL</h2>
+                <p>K-NEXUS DUNDEE CIC is proud to support local mental health services.</p>
+                <button class="btn-nhs">DONATE TO NHS MENTAL HEALTH</button>
             </div>
         </div>
     </div>
+
+    <footer style="background:#000; color:#fff; padding:30px; text-align:center; margin-top:50px;">
+        <p>K-NEXUS DUNDEE | Peer-to-Peer Support Sanctuary | FSCS Protected</p>
+    </footer>
 </body>
 </html>
