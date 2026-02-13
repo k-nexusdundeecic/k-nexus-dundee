@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>K-NEXUS | Master Control</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;600;900&display=swap" rel="stylesheet">
+    <style>
+01 :root { --pink: #FF69B4; --dark-hud: rgba(15, 15, 15, 0.9); --accent: #FF1493; }
+02 body { background-color: #000; font-family: 'Lexend', sans-serif; margin: 0; }
+03 .nav-hud { background: var(--dark-hud); padding: 25px; position: sticky; top: 0; border-bottom: 3px solid var(--accent); text-align: center; }
+04 .nav-hud a { color: white; margin: 0 15px; text-decoration: none; font-weight: 900; text-transform: uppercase; }
+05 .admin-card { background: white; padding: 50px; border-radius: 30px; border: 5px solid var(--accent); max-width: 900px; margin: 50px auto; }
+06 .admin-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+07 .admin-table th, .admin-table td { border: 1px solid #ddd; padding: 15px; text-align: left; }
+08 .btn-ban { background: red; color: white; border: none; padding: 5px 10px; cursor: pointer; font-weight: 900; }
+    </style>
+</head>
+<body>
+    <nav class="nav-hud">
+        <a href="index.html">HOME</a>
+        <a href="gaming.html">ARCADE</a>
+        <a href="cafe.html">CAFE</a>
+        <a href="clinic.html">CLINIC</a>
+        <a href="membership.html">JOIN</a>
+        <a href="admin.html">CONTROL</a>
+    </nav>
+    <div class="admin-card">
+        <h1>Master Admin Protocol</h1>
+        <p>Authorized Personnel Only: Director Andrew Lafferty</p>
+        <table class="admin-table">
+            <tr style="background:#eee;">
+                <th>User ID</th>
+                <th>Status</th>
+                <th>Security Actions</th>
+            </tr>
+            <tr>
+                <td>MEM_772</td>
+                <td style="color:green; font-weight:bold;">ACTIVE</td>
+                <td>
+                    <button class="btn-ban" onclick="alert('User Blacklisted')">BAN</button>
+                    <button onclick="alert('Refund Processed')">REFUND</button>
+                    <button onclick="alert('Pass Reset Link Sent')">RESET</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
