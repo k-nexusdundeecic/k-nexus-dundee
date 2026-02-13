@@ -2,47 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>K-NEXUS | Master Control</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;600;900&display=swap" rel="stylesheet">
+    <title>K-NEXUS | Sentinel Control</title>
     <style>
-01 :root { --pink: #FF69B4; --dark-hud: rgba(15, 15, 15, 0.9); --accent: #FF1493; }
-02 body { background-color: #000; font-family: 'Lexend', sans-serif; margin: 0; }
-03 .nav-hud { background: var(--dark-hud); padding: 25px; position: sticky; top: 0; border-bottom: 3px solid var(--accent); text-align: center; }
-04 .nav-hud a { color: white; margin: 0 15px; text-decoration: none; font-weight: 900; text-transform: uppercase; }
-05 .admin-card { background: white; padding: 50px; border-radius: 30px; border: 5px solid var(--accent); max-width: 900px; margin: 50px auto; }
-06 .admin-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-07 .admin-table th, .admin-table td { border: 1px solid #ddd; padding: 15px; text-align: left; }
-08 .btn-ban { background: red; color: white; border: none; padding: 5px 10px; cursor: pointer; font-weight: 900; }
+        :root { --pink: #FF69B4; --dark: #0a0a0a; --accent: #FF1493; }
+        body { background: var(--dark); color: white; font-family: sans-serif; margin: 0; }
+        #lock-screen { position: fixed; width: 100%; height: 100%; background: #000; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .panel { padding: 40px; max-width: 1000px; margin: auto; display: none; }
+        .hud-nav { background: rgba(255, 105, 180, 0.1); padding: 20px; border-bottom: 2px solid var(--pink); text-align: center; }
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #1a1a1a; }
+        .data-table th, .data-table td { padding: 15px; border: 1px solid #333; text-align: left; }
+        .pass-input { padding: 15px; border-radius: 10px; border: 2px solid var(--pink); background: #222; color: white; text-align: center; font-size: 1.2rem; margin-bottom: 20px; }
+        .btn-access { background: var(--pink); padding: 10px 30px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; color: black; }
+        .btn-ban { background: #d32f2f; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 5px; }
     </style>
 </head>
 <body>
-    <nav class="nav-hud">
-        <a href="index.html">HOME</a>
-        <a href="gaming.html">ARCADE</a>
-        <a href="cafe.html">CAFE</a>
-        <a href="clinic.html">CLINIC</a>
-        <a href="membership.html">JOIN</a>
-        <a href="admin.html">CONTROL</a>
-    </nav>
-    <div class="admin-card">
-        <h1>Master Admin Protocol</h1>
-        <p>Authorized Personnel Only: Director Andrew Lafferty</p>
-        <table class="admin-table">
-            <tr style="background:#eee;">
-                <th>User ID</th>
+
+    <div id="lock-screen">
+        <h2 style="color:var(--pink)">SENTINEL ACCESS REQUIRED</h2>
+        <input type="password" id="pass" class="pass-input" placeholder="ENTER STAFF CODE">
+        <button onclick="unlock()" class="btn-access">ACCESS MASTER CONTROL</button>
+    </div>
+
+    <div id="admin-panel" class="panel">
+        <nav class="hud-nav">
+            <a href="index.html" style="color:var(--pink); text-decoration:none; font-weight:900;">RETURN TO ENTRANCE</a>
+        </nav>
+        
+        <h1>Sentinel Master Control</h1>
+        <p><strong>Director: Andrew Lafferty</strong> | Security Tier 1</p>
+        
+        <hr style="border: 1px solid #333; margin: 30px 0;">
+
+        <h3>Business Assets & Infrastructure</h3>
+        <table class="data-table">
+            <tr>
+                <th>System</th>
                 <th>Status</th>
-                <th>Security Actions</th>
+                <th>Logistics Note</th>
             </tr>
             <tr>
-                <td>MEM_772</td>
-                <td style="color:green; font-weight:bold;">ACTIVE</td>
-                <td>
-                    <button class="btn-ban" onclick="alert('User Blacklisted')">BAN</button>
-                    <button onclick="alert('Refund Processed')">REFUND</button>
-                    <button onclick="alert('Pass Reset Link Sent')">RESET</button>
-                </td>
+                <td>Entertainment Fleet</td>
+                <td>Ready</td>
+                <td>Mobile Experience Units Stocked</td>
+            </tr>
+            <tr>
+                <td>K-Wall Vending</td>
+                <td>Operational</td>
+                <td>Cladding & Tech Setup Secure</td>
+            </tr>
+        </table>
+
+        <h3>Member & Security Management</h3>
+        <table class="data-table">
+            <tr>
+                <th>Member ID</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>KNX-SAMPLE-01</td>
+                <td>Active</td>
+                <td><button class="btn-ban">BAN USER</button></td>
             </tr>
         </table>
     </div>
+
+    <script>
+        function unlock() {
+            var code = document.getElementById("pass").value;
+            if (code === "1108") {
+                document.getElementById("lock-screen").style.display = "none";
+                document.getElementById("admin-panel").style.display = "block";
+            } else {
+                alert("ACCESS DENIED: Incorrect Sentinel Protocol");
+            }
+        }
+    </script>
 </body>
 </html>
